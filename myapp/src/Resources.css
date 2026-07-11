@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --bg-ink: #0D1420;
+    --bg-form: #F5F3EE;
+    --accent-teal: #3FA796;
+    --accent-teal-dim: #2C7A6D;
+    --text-on-ink: #F2F1EC;
+    --text-on-ink-dim: #7C8699;
+    --text-on-form: #17202B;
+    --text-on-form-dim: #6B7280;
+    --card-border: rgba(23, 32, 43, 0.1);
+}
+
+.Logo-Icon {
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-form);
+    color: var(--text-on-form);
+}
+
+
+.Resources-Page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Nav-Bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: var(--bg-ink);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.Nav-Logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-on-ink);
+    letter-spacing: -0.01em;
+    cursor: pointer;
+}
+
+.Nav-Actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Nav-Login {
+    color: var(--text-on-ink-dim);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.Nav-Login:hover {
+    color: var(--text-on-ink);
+}
+
+
+.Resources-Header {
+    background: var(--bg-ink);
+    padding: 56px 48px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.Path-Kicker {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    font-weight: 600;
+}
+
+.Resources-Headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--text-on-ink);
+}
+
+.Resources-Sub {
+    color: var(--text-on-ink-dim);
+    font-size: 1rem;
+    max-width: 420px;
+}
+
+
+.Section {
+    padding: 56px 48px;
+    max-width: 880px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.Section-Alt {
+    background: #EFECE3;
+    max-width: 100%;
+}
+
+.Section-Alt .Section-Head,
+.Section-Alt .Resource-List {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.Section-Head {
+    margin-bottom: 28px;
+}
+
+.Section-Head h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.Text-Dim {
+    color: var(--text-on-form-dim);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+.Resource-List {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.Resource-Row {
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: border-color 0.2s ease;
+}
+
+.Resource-Row:hover {
+    border-color: rgba(63, 167, 150, 0.35);
+}
+
+.Resource-Info h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-on-form);
+    margin-bottom: 4px;
+}
+
+.Resource-Tag {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--accent-teal-dim);
+    background: rgba(63, 167, 150, 0.12);
+    padding: 6px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+
+.Footer {
+    margin-top: auto;
+    background: var(--bg-ink);
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-on-ink);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.Footer .Text-Dim {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--text-on-ink-dim);
+}
+
+
+@media (max-width: 700px) {
+    .Resource-Row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .Section {
+        padding: 40px 28px;
+    }
+
+    .Resources-Header {
+        padding: 40px 28px;
+    }
+
+    .Nav-Bar {
+        padding: 16px 24px;
+    }
+
+    .Footer {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+        padding: 24px;
+    }
+}

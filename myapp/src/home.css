@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-ink: #0D1420;
+    --bg-form: #F5F3EE;
+    --accent-teal: #3FA796;
+    --accent-teal-dim: #2C7A6D;
+    --text-on-ink: #F2F1EC;
+    --text-on-ink-dim: #7C8699;
+    --text-on-form: #17202B;
+    --text-on-form-dim: #6B7280;
+    --card-border: rgba(23, 32, 43, 0.1);
+}
+
+.Logo-Icon {
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-form);
+    color: var(--text-on-form);
+}
+
+.Home-Page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Nav ---------- */
+
+.Nav-Bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: var(--bg-ink);
+}
+
+.Nav-Logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-on-ink);
+    letter-spacing: -0.01em;
+}
+
+.Nav-Links {
+    display: flex;
+    gap: 32px;
+}
+
+.Nav-Links a {
+    color: var(--text-on-ink-dim);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.Nav-Links a:hover {
+    color: var(--text-on-ink);
+}
+
+.Nav-Logout {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    color: var(--text-on-ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.Nav-Logout:hover {
+    border-color: var(--accent-teal);
+    background: rgba(63, 167, 150, 0.1);
+}
+
+/* ---------- Hero ---------- */
+
+.Hero {
+    background: var(--bg-ink);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 32px;
+    padding: 64px 48px 88px;
+    position: relative;
+    overflow: hidden;
+}
+
+.Hero-Text {
+    position: relative;
+    z-index: 2;
+}
+
+.Path-Kicker {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.Hero-Headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    color: var(--text-on-ink);
+    max-width: 480px;
+}
+
+.Hero-Sub {
+    margin-top: 20px;
+    color: var(--text-on-ink-dim);
+    font-size: 1rem;
+    max-width: 420px;
+    line-height: 1.6;
+}
+
+.Hero-Actions {
+    margin-top: 32px;
+    display: flex;
+    gap: 14px;
+}
+
+.Login-Button {
+    height: 46px;
+    padding: 0 22px;
+    border-radius: 7px;
+    border: none;
+    background: var(--accent-teal);
+    color: #08211D;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.Login-Button:hover {
+    background: var(--accent-teal-dim);
+}
+
+.Login-Button:active {
+    transform: translateY(1px);
+}
+
+.Hero-Secondary {
+    height: 46px;
+    padding: 0 22px;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: var(--text-on-ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.Hero-Secondary:hover {
+    border-color: var(--accent-teal);
+    background: rgba(63, 167, 150, 0.08);
+}
+
+.Hero-Svg {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 260px;
+}
+
+.Path-Line {
+    stroke: var(--accent-teal);
+    stroke-width: 2;
+    stroke-linecap: round;
+    opacity: 0.8;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: draw-path 1.8s ease-out 0.3s forwards;
+}
+
+.Path-Point {
+    fill: var(--bg-ink);
+    stroke: var(--accent-teal);
+    stroke-width: 2;
+    opacity: 0;
+    animation: pop-in 0.4s ease-out forwards;
+}
+
+.Path-Point.p1 { animation-delay: 0.4s; }
+.Path-Point.p2 { animation-delay: 0.9s; }
+.Path-Point.p3 { animation-delay: 1.4s; }
+.Path-Point.p4 {
+    fill: var(--accent-teal);
+    animation-delay: 1.9s, 2.3s;
+    animation-name: pop-in, pulse-glow;
+    animation-duration: 0.4s, 2s;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-out, ease-in-out;
+}
+
+@keyframes draw-path {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes pop-in {
+    to { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { filter: drop-shadow(0 0 0 rgba(63, 167, 150, 0)); }
+    50% { filter: drop-shadow(0 0 8px rgba(63, 167, 150, 0.9)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Path-Line, .Path-Point {
+        animation: none;
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ---------- Sections ---------- */
+
+.Section {
+    padding: 72px 48px;
+}
+
+.Section-Alt {
+    background: #EFECE3;
+}
+
+.Section-Head {
+    margin-bottom: 36px;
+    max-width: 520px;
+}
+
+.Section-Head h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.Text-Dim {
+    color: var(--text-on-form-dim);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.Card-Grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.Feature-Card {
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 28px 24px;
+}
+
+.Feature-Mark {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--accent-teal);
+    margin-bottom: 14px;
+}
+
+.Feature-Card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    color: var(--text-on-form);
+}
+
+.Career-Card {
+    background: #FFFFFF;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Career-Card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-on-form);
+}
+
+.Career-Tag {
+    align-self: flex-start;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--accent-teal-dim);
+    background: rgba(63, 167, 150, 0.12);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* ---------- Footer ---------- */
+
+.Footer {
+    margin-top: auto;
+    background: var(--bg-ink);
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-on-ink);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.Footer .Text-Dim {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--text-on-ink-dim);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+    .Hero {
+        grid-template-columns: 1fr;
+        padding: 48px 28px 56px;
+    }
+
+    .Hero-Svg {
+        height: 180px;
+        order: -1;
+    }
+
+    .Card-Grid {
+        grid-template-columns: 1fr;
+    }
+
+    .Section {
+        padding: 48px 28px;
+    }
+
+    .Nav-Bar {
+        padding: 16px 24px;
+    }
+
+    .Nav-Links {
+        display: none;
+    }
+
+    .Footer {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+        padding: 24px;
+    }
+}
