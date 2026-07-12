@@ -7,11 +7,13 @@ const jsonwebtoken = require("jsonwebtoken")
 
 const DatabaseRouter = express.Router()
 
+require("dotenv").config()
+
 
 const database = mysql.createConnection({
 host: 'localhost',
 user: 'root',
-password: process.env.DB_PASSWORD || "443151Ch",
+password: process.env.DB_PASSWORD || "YOUR_PASSWORD",
 database: "careerguidence"
 })
 
