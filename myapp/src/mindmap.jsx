@@ -605,8 +605,8 @@ export default function ComprehensiveThreeTierWorkspace() {
       {/* DIRECTORY SIDEBAR PANELS */}
       <div style={{ width: "360px", height: "100%", borderRight: "1px solid #1e293b", display: "flex", flexDirection: "column", backgroundColor: "#0f172a", zIndex: 10 }}>
         <div style={{ padding: "20px", borderBottom: "1px solid #1e293b" }}>
-          <h2 style={{ color: "#10b981", margin: 0, fontSize: "16px", fontWeight: "700", fontFamily: "sans-serif" }}>NotebookLM Source Docs</h2>
-          <p style={{ color: "#64748b", margin: "4px 0 0 0", fontSize: "11px", fontFamily: "sans-serif" }}>Full Uncompromised Multi-Tier Dataset</p>
+          <h2 style={{ color: "#10b981", margin: 0, fontSize: "16px", fontWeight: "700", fontFamily: "sans-serif" }}>Mindmap</h2>
+          <p style={{ color: "#64748b", margin: "4px 0 0 0", fontSize: "11px", fontFamily: "sans-serif" }}>Full dataset</p>
         </div>
         <div style={{ flex: 1, overflowY: "auto", padding: "12px 6px" }}>
           {renderRecursiveSidebarItem(rpTree)}
