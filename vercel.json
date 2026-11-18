@@ -1,5 +1,0 @@
-{
-  "installCommand": "npm --prefix myapp install",
-  "buildCommand": "npm --prefix myapp run build",
-  "outputDirectory": "myapp/dist"
-}
