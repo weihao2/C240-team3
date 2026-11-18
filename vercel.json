@@ -1,22 +1,5 @@
 {
-  "services": {
-    "main_app": {
-      "root": "app/",
-      "framework": "vite"
-    },
-    "sub_app": {
-      "root": "myapp/",
-      "framework": "vite"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/myapp/(.*)",
-      "destination": { "service": "sub_app" }
-    },
-    {
-      "source": "/(.*)",
-      "destination": { "service": "main_app" }
-    }
-  ]
+  "installCommand": "npm --prefix myapp install",
+  "buildCommand": "npm --prefix myapp run build",
+  "outputDirectory": "myapp/dist"
 }
