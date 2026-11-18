@@ -10,12 +10,20 @@ const DatabaseRouter = express.Router()
 require("dotenv").config()
 
 
+var hostname = "5wvyra.h.filess.io";
+var db = "C240_FA_dotshoutat";
+var port = "3307";
+var username = "C240_FA_dotshoutat";
+
+
+
 const database = mysql.createConnection({
-host: 'localhost',
-user: 'root',
-password: process.env.DB_PASSWORD || "YOUR_PASSWORD",
-database: "careerguidence"
-})
+    host: hostname,
+    user: username,
+    password: process.env.PASSWORD,
+    database: db,
+    port : port
+});
 
 
 database.connect((err)=> {
